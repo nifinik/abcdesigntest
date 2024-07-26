@@ -149,7 +149,7 @@ body {
 ///////////////////////////////// Main //////////////////////////////////
 
 .main {
-  background: url("/img/bg-img.png") center (center/cover) no-repeat;
+  background: url("../img/bg-img.png") center (center/cover) no-repeat;
   color: white;
   padding-bottom: 36px;
 
@@ -228,7 +228,7 @@ body {
 
     .item {
       cursor: pointer;
-      background: url("/img/service-img/service_1.png") center (center/cover)
+      background: url("../img/service-img/service_1.png") center (center/cover)
         no-repeat;
       border-radius: 12px;
       padding: 36px;
@@ -264,23 +264,23 @@ body {
 
     .item:nth-child(2) {
       cursor: pointer;
-      background: url("/img/service-img/service_2.png") center (center/cover)
+      background: url("../img/service-img/service_1.png") center (center/cover)
         no-repeat;
     }
 
     .item:nth-child(3) {
       cursor: pointer;
-      background: url("/img/service-img/service_3.png") center (center/cover)
+      background: url("../img/service-img/service_3.png") center (center/cover)
         no-repeat;
     }
     .item:nth-child(4) {
       cursor: pointer;
-      background: url("/img/service-img/service_4.png") center (center/cover)
+      background: url("../img/service-img/service_4.png") center (center/cover)
         no-repeat;
     }
     .item:nth-child(5) {
       cursor: pointer;
-      background: url("/img/service-img/service_5.png") center (center/cover)
+      background: url("../img/service-img/service_5.png") center (center/cover)
         no-repeat;
     }
   }
@@ -327,7 +327,7 @@ body {
   padding-top: 90px;
 
   &__item {
-    background: url("/img/consultation.png") center (center/cover) no-repeat;
+    background: url("../img/consultation.png") center (center/cover) no-repeat;
     text-align: start;
     border-radius: 12px;
     padding: 80px 60px;
