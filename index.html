@@ -21,6 +21,39 @@
     <title>CamService - Надежный Монтаж Слаботочных Систем</title>
   </head>
   <body>
+    <div class="menu">
+      <div class="menu__block">
+        <div class="menu__close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              fill="white"
+              fill-rule="evenodd"
+              d="M799.855 166.312c.023.007.043.018.084.059l57.69 57.69c.041.041.052.06.059.084a.1.1 0 0 1 0 .069c-.007.023-.018.042-.059.083L569.926 512l287.703 287.703c.041.04.052.06.059.083a.12.12 0 0 1 0 .07c-.007.022-.018.042-.059.083l-57.69 57.69c-.041.041-.06.052-.084.059a.1.1 0 0 1-.069 0c-.023-.007-.042-.018-.083-.059L512 569.926L224.297 857.629c-.04.041-.06.052-.083.059a.12.12 0 0 1-.07 0c-.022-.007-.042-.018-.083-.059l-57.69-57.69c-.041-.041-.052-.06-.059-.084a.1.1 0 0 1 0-.069c.007-.023.018-.042.059-.083L454.073 512L166.371 224.297c-.041-.04-.052-.06-.059-.083a.12.12 0 0 1 0-.07c.007-.022.018-.042.059-.083l57.69-57.69c.041-.041.06-.052.084-.059a.1.1 0 0 1 .069 0c.023.007.042.018.083.059L512 454.073l287.703-287.702c.04-.041.06-.052.083-.059a.12.12 0 0 1 .07 0Z"
+            />
+          </svg>
+        </div>
+        <nav class="nav">
+          <ul>
+            <a href="#aboutUs" id="menuItem"> О нас </a>
+            <a href="#services" id="menuItem"> Услуги </a>
+            <a href="#sertificates" id="menuItem"> Сертификаты </a>
+            <a href="#feedback" id="menuItem"> Отзывы </a>
+            <a href="#ads" id="menuItem"> Объявления </a>
+            <a href="#contacts" id="menuItem"> Контакты </a>
+          </ul>
+        </nav>
+        <button data-modal="consultation" class="mainBtn">
+          Заказать звонок
+        </button>
+      </div>
+      <div class="menu__overlay"></div>
+    </div>
+
     <header class="header">
       <div class="header__up">
         <a class="header__up-item">
@@ -91,7 +124,7 @@
         </div>
         <div class="main__bottom">
           <div>
-            <img src="img/header-icons/mouse-scroll.svg" alt="" />
+            <img src="img/header-icons/mouse-scroll.svg" alt="" class="mouse" />
           </div>
           <div class="main__call">
             <img src="img/telegram-icon.svg" alt="telegram" />
