@@ -295,6 +295,11 @@ body {
     margin-top: 32px;
     gap: 12px;
 
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
     .mainBtn {
       height: 48px;
     }
@@ -1023,8 +1028,8 @@ body {
         height: 100%;
         align-items: center;
         justify-content: center;
-        img {
-        }
+        // img {
+        // }
       }
     }
   }
