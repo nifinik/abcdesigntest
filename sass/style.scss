@@ -18,6 +18,32 @@ body {
   background-color: white;
 }
 
+.calls {
+  animation-name: calls;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes calls {
+  from {
+    transform: translateY(0px);
+  }
+  33% {
+    transform: translateY(-5px);
+  }
+
+  66% {
+    transform: translateY(5px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
 .mouse {
   animation-name: mouse;
   animation-duration: 2s;
@@ -305,6 +331,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    img {
+      cursor: pointer;
+    }
   }
 }
 
@@ -418,11 +447,18 @@ body {
 .consultation {
   padding-top: 90px;
 
+  &__move {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
   &__item {
-    background: url("../img/consultation.png") center (center/cover) no-repeat !important;
+    background: url("../img/consultation.png") center (center/cover) no-repeat;
     text-align: start;
     border-radius: 12px;
     padding: 80px 60px;
+    transition: all 0.5s ease-in-out;
 
     .title {
       text-align: start;
@@ -508,8 +544,13 @@ body {
     }
 
     &-img {
+      transition: all 0.5s ease-in-out;
       img {
         border-radius: 10px;
+      }
+
+      &:hover {
+        transform: scale(1.02);
       }
     }
   }
@@ -1148,10 +1189,13 @@ body {
   .footer {
     &__head {
       flex-direction: column;
-      align-items: start;
-      gap: 16px;
+      align-items: center;
+      gap: 32px;
 
       .logo {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
         img {
           width: 250px;
         }
@@ -1162,8 +1206,12 @@ body {
         height: auto;
         ul {
           flex-wrap: wrap;
+          justify-content: center;
         }
       }
+    }
+    &-text {
+      text-align: center;
     }
   }
 }
