@@ -8,6 +8,12 @@
   // font-family: "Roboto", sans-serif;
 }
 
+html {
+  // -webkit-text-size-adjust: 100%;
+  // -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: white;
 }
@@ -30,7 +36,8 @@ body {
 ///////////////////////////////// Header //////////////////////////////////
 
 .header {
-  max-width: 1200px;
+  padding: 0 20px;
+  max-width: 1240px;
   display: flex;
   flex-direction: column;
   margin: 10px auto;
@@ -292,11 +299,11 @@ body {
   padding-top: 90px;
 
   &__items {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 24px;
-    display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 36px;
 
     .itemm {
       text-align: center;
@@ -423,13 +430,76 @@ body {
   }
 }
 
-/////// Ads ///////
+/////// Feedback ///////
+
+.feedback {
+  padding-top: 90px;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 36px;
+
+    .item {
+      border-radius: 10px;
+      padding: 48px 32px;
+      background-color: #f5f5f5;
+      border: none;
+      position: relative;
+
+      &-img {
+        z-index: 100;
+        position: absolute;
+        top: -30px;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  &-icons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 5px;
+  }
+
+  &-descr {
+    margin-top: 18px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #444444;
+  }
+
+  &-time {
+    margin-top: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #828282;
+  }
+}
+
+/////// Ourworks ///////
 
 .ourWorks {
   padding-top: 90px;
 
   &__items {
     margin-top: 36px;
+    .item {
+      img {
+        height: 280px;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -451,7 +521,9 @@ body {
 
       img {
         width: 100%;
+        height: 280px;
         border-radius: 10px;
+        object-fit: cover;
       }
 
       &__content {
@@ -498,6 +570,11 @@ body {
 .contacts {
   padding-top: 90px;
 
+  iframe {
+    width: 100%;
+    // filter: invert(100%);
+  }
+
   .title {
     text-align: start;
     margin-bottom: 24px;
@@ -508,6 +585,7 @@ body {
     gap: 24px;
 
     &-left {
+      flex: 1.3;
       .map {
         overflow: hidden;
         border: 1px solid #f5f5f5;
@@ -517,6 +595,7 @@ body {
     }
 
     &-right {
+      flex: 0.7;
       height: 450px;
       background-color: #f5f5f5;
       padding: 46px;
@@ -557,8 +636,9 @@ body {
   padding: 80px 0;
 
   &__items {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
 
     .item {
       border: 1px solid #e4e4e4;
@@ -668,6 +748,337 @@ body {
       font-size: 16px;
       line-height: 125%;
       color: #666666;
+    }
+  }
+}
+
+.stuff {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.overlay {
+  display: none;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.56);
+  backdrop-filter: blur(5px);
+  z-index: 0;
+}
+
+#consultation,
+#success {
+  display: none;
+}
+
+.modal {
+  z-index: 2;
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__close {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    cursor: pointer;
+  }
+}
+
+.hamburger {
+  display: none;
+  text-align: right;
+}
+
+// Media queryies
+
+// Media Header Section
+
+@media (max-width: 1204px) {
+  .header {
+    .mainBtn {
+      display: none;
+    }
+    .nav {
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  .hamburger {
+    display: block;
+    text-align: right;
+  }
+}
+
+@media (max-width: 528px) {
+  .header {
+    &__up {
+      flex-direction: column;
+      gap: 12px;
+      align-items: end;
+    }
+  }
+}
+
+@media (max-width: 458px) {
+  .header {
+    &__down {
+      .logo {
+        width: 230px;
+
+        img {
+          width: 100%;
+        }
+      }
+      gap: 12px;
+    }
+  }
+}
+
+// Media Main Section
+
+@media (max-width: 468px) {
+  .main {
+    h1 {
+      font-size: 38px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+    }
+
+    &__btns {
+      flex-direction: column;
+    }
+  }
+}
+
+// Media Services Section
+
+@media (max-width: 1048px) {
+  .services {
+    &__items {
+      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 728px) {
+  .services {
+    &__items {
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Media Reason Section
+
+@media (max-width: 916px) {
+  .reason {
+    &__items {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      .itemm {
+        text-align: start;
+        flex: 1;
+      }
+
+      .arrow {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        img {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 938px) {
+  .reason {
+    &__items {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 598px) {
+  .reason {
+    &__items {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Media Consultation Section
+
+@media (max-width: 798px) {
+  .consultation {
+    &__item {
+      padding: 40px 30px;
+
+      .title {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .inputs {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .submit {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+// Media Consultation Section
+// done
+
+// Media aboutUs Section
+@media (max-width: 968px) {
+  .aboutUs {
+    &__content {
+      &-img {
+        height: 450px;
+        width: 100%;
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      gap: 24px;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .aboutUs {
+    &__content {
+      &-img {
+        height: 320px;
+        width: 100%;
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Media contacts Section
+
+@media (max-width: 878px) {
+  .contacts {
+    &__item {
+      &-left {
+        width: 100%;
+      }
+      &-right {
+        width: 100%;
+      }
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contacts {
+    &__item {
+      &-right {
+        padding: 24px;
+      }
+    }
+  }
+}
+
+// Media Partners Section
+
+@media (max-width: 1200px) {
+  .partners {
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .partners {
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .partners {
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 518px) {
+  .partners {
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr;
+      .item {
+        display: flex;
+        justify-content: center;
+        img {
+          height: 48px;
+        }
+      }
+    }
+  }
+}
+
+// Media Footer Section
+
+@media (max-width: 1090px) {
+  .footer {
+    &__head {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+
+      .logo {
+        img {
+          width: 250px;
+        }
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        height: auto;
+        ul {
+          flex-wrap: wrap;
+        }
+      }
     }
   }
 }
