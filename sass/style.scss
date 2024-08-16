@@ -348,11 +348,13 @@ body {
   &__items {
     font-family: "Roboto";
     margin-top: 36px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 32px;
 
     .item {
+      flex: 1 1 340px;
       cursor: pointer;
       background: url("../img/service-img/service_1.png") center (center/cover)
         no-repeat !important;
